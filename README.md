@@ -106,6 +106,7 @@ docker inspect my_postgres
    - **Save Password?** ✔️
 
 6. לחץ על **Save**.
+   -[https://www.docker.com/blog/how-to-use-the-postgres-docker-official-image/]
 
    ![database connection](https://github.com/yair-go/docker-postgres-tutorial/blob/main/database%20connection.png)
 
