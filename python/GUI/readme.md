@@ -1,4 +1,4 @@
-# תצוגת נתונים עם Tkinter ו-SQLAlchemy
+# תצוגת נתונים עם  SQLAlchemy ו Tkinter (או Streamlit).  
 
 ## תיאור
 
