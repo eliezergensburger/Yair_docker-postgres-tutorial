@@ -24,7 +24,7 @@ class Customer(Base):
         return f"<Customer(id={self.id}, name='{self.first_name} {self.last_name}')>"
 
 class Product(Base):
-    __tablename__ = 'Product'  # Note: keeping your original table name
+    __tablename__ = 'product'  # Note: keeping your original table name
     
     id = Column(Integer, primary_key=True)
     name = Column(String(100), nullable=False)
@@ -37,11 +37,11 @@ class Product(Base):
         return f"<Product(id={self.id}, name='{self.name}', price={self.price})>"
 
 class Invoice(Base):
-    __tablename__ = 'Invoice'  # Note: keeping your original table name
+    __tablename__ = 'invoice'  # Note: keeping your original table name
     
     id = Column(Integer, primary_key=True)
     customer_id = Column(Integer, ForeignKey('customer.id'), nullable=False)
-    product_id = Column(Integer, ForeignKey('Product.id'), nullable=False)
+    product_id = Column(Integer, ForeignKey('product.id'), nullable=False)
     quantity = Column(Integer, nullable=False)
     
     # Relationships
@@ -83,8 +83,8 @@ def fetch_all_orm(model_class):
 def get_model_by_name(table_name):
     models = {
         'customer': Customer,
-        'Product': Product,
-        'Invoice': Invoice
+        'product': Product,
+        'invoice': Invoice
     }
     return models.get(table_name)
 
@@ -548,8 +548,8 @@ frm_buttons = tk.Frame(window)
 frm_buttons.pack(pady=5)
 
 tk.Button(frm_buttons, text="Show Customers", command=lambda: switch_table("customer")).pack(side="left", padx=5)
-tk.Button(frm_buttons, text="Show Products", command=lambda: switch_table("Product")).pack(side="left", padx=5)
-tk.Button(frm_buttons, text="Show Invoices", command=lambda: switch_table("Invoice")).pack(side="left", padx=5)
+tk.Button(frm_buttons, text="Show Products", command=lambda: switch_table("product")).pack(side="left", padx=5)
+tk.Button(frm_buttons, text="Show Invoices", command=lambda: switch_table("invoice")).pack(side="left", padx=5)
 tk.Button(frm_buttons, text="Load Selected", command=load_selected_record).pack(side="left", padx=5)
 tk.Button(frm_buttons, text="Delete Selected", command=delete_record, bg="red", fg="white").pack(side="left", padx=5)
 
