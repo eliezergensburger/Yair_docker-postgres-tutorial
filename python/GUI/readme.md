@@ -35,11 +35,23 @@
 להרצת הקובץ:
 
 ```sh
-python gui.py
+python simple_gui.py
 ```
 
 ## הערות
 
 - יש לוודא שהחיבור לבסיס הנתונים פעיל ושיש הרשאות מתאימות למשתמש.
 - אם מתרחשת שגיאה בעת הכנסת נתונים לרכיב התצוגה, השגיאה תודפס במסוף.
+
+### for streamlit install the following
+
+```sh
+pip install streamlit pandas sqlalchemy psycopg2-binary plotly
+```
+
+and then type from the GUI folder
+
+```sh
+streamlit run .\streamlit_app.py
+```
 
